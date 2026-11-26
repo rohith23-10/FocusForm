@@ -8,7 +8,13 @@
 </p>
 
 ---
+## 🎥 Project Demo
 
+Watch the FocusForm demo:
+
+[![FocusForm Demo](https://img.youtube.com/vi/RL3ZpXVaOfM/0.jpg)](https://youtu.be/RL3ZpXVaOfM)
+
+[▶ Watch Full Demo on YouTube](https://youtu.be/RL3ZpXVaOfM)
 ## 📌 Project Overview
 
 FocusForm is a web-based productivity and posture monitoring application that combines real-time AI-powered posture detection with focus management tools.
