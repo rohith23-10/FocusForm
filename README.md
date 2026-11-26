@@ -1,51 +1,108 @@
-# FocusForm – Sit Better. Focus Smarter.
+# FocusForm – Sit Better. Focus Smarter. 🧠
 
-FocusForm is a smart productivity and posture-monitoring web application designed to help users maintain healthy sitting habits while improving focus and productivity.
+**An AI-powered posture monitoring and productivity application that helps users maintain healthy sitting habits and improve focus.**
 
-It combines real-time AI-powered posture detection, a Pomodoro focus timer, productivity analytics and database-backed activity tracking.
+<p align="center">
+  <a href="https://focusform-frontend.onrender.com">🌐 Live Demo</a> ·
+  <a href="https://github.com/rohith23-10/FocusForm">💻 GitHub Repository</a>
+</p>
 
-## Features
+---
 
-### 1. AI-Powered Posture Monitoring
-- Real-time body posture detection using MediaPipe Pose Landmarker.
-- Detects slouching, sideways leaning, uneven shoulders and sitting too close to the screen.
-- Personalized posture calibration.
-- Posture score from 0–100.
-- Visual feedback and posture correction alerts.
+## 📌 Project Overview
 
-### 2. Pomodoro Focus Timer
-- Customizable focus and break durations.
-- Start, pause and reset controls.
-- Automatic transition between focus and break sessions.
-- Desktop notifications and audio alerts.
+FocusForm is a web-based productivity and posture monitoring application that combines real-time AI-powered posture detection with focus management tools.
 
-### 3. Productivity Analytics
-- Daily focus time tracking.
-- Completed focus sessions.
+It uses MediaPipe Pose Landmarker to detect body landmarks through a webcam and analyse sitting posture. Users receive real-time feedback when they slouch, lean sideways or move away from the recommended sitting position.
+
+Along with posture monitoring, FocusForm provides a Pomodoro focus timer, posture scoring, and productivity analytics to encourage healthier and more productive working habits.
+
+## ✨ Key Features
+
+### 🧍 AI-Powered Posture Monitoring
+- Real-time body landmark detection using MediaPipe Pose Landmarker.
+- Detects slouching and improper sitting posture.
+- Identifies leaning and shoulder alignment issues.
+- Provides posture scores and corrective feedback.
+- Calibration support for personalised posture monitoring.
+
+### ⏱️ Focus Management
+- Pomodoro-style focus timer.
+- Focus session tracking.
+- Session completion tracking.
+- Helps users maintain consistent study and work sessions.
+
+### 📊 Analytics Dashboard
 - Posture score tracking.
-- Weekly productivity charts.
-- Personalized productivity insights.
+- Weekly posture and productivity analytics.
+- Automatic saving of posture statistics.
+- Focus session history.
 
-### 4. Database Integration
-- Python Flask backend.
-- SQLite database for storing focus sessions and posture statistics.
-- REST API endpoints for saving and retrieving records.
-- Automatic posture score storage every 60 seconds.
+### 🔔 Smart Notifications
+- Voice-based posture alerts.
+- Browser notifications.
+- Real-time corrective feedback.
 
-## Technology Stack
+### 🔒 Privacy
+- Webcam frames are processed directly in the browser.
+- Raw webcam video is not uploaded to the backend.
+- Only posture-related statistics and focus-session information are sent to the backend for storage.
+
+---
+
+## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
-| HTML | Application structure |
-| CSS | User interface and styling |
-| JavaScript | Frontend functionality |
-| MediaPipe | AI-powered pose detection |
+| HTML5 | Application structure |
+| CSS3 | Styling and responsive interface |
+| JavaScript | Frontend functionality and posture analysis |
+| MediaPipe Pose Landmarker | AI-powered body landmark detection |
 | Python | Backend development |
 | Flask | REST API |
-| SQLite | Database |
-| Flask-CORS | Frontend-backend communication |
+| Flask-CORS | Cross-origin communication |
+| SQLite | Data storage |
+| Render | Application deployment |
 
-## Project Structure
+---
+
+## 🏗️ System Architecture
+
+```text
+             USER
+              |
+              v
+       FRONTEND WEBSITE
+         HTML / CSS / JS
+              |
+              v
+        WEBCAM INPUT
+              |
+              v
+    MEDIAPIPE POSE LANDMARKER
+              |
+              v
+      POSTURE ANALYSIS
+              |
+              v
+    POSTURE SCORE & FEEDBACK
+              |
+              v
+       FLASK REST API
+              |
+              v
+         SQLITE DATABASE
+              |
+              v
+       POSTURE & FOCUS
+           ANALYTICS
+```
+
+**Processing approach:** Webcam frames are analysed in the browser using MediaPipe. The backend receives posture statistics and focus-session records rather than raw webcam footage.
+
+---
+
+## 📂 Project Structure
 
 ```text
 FocusForm/
@@ -53,81 +110,184 @@ FocusForm/
 ├── index.html
 ├── style.css
 ├── app.js
+│
 ├── app.py
 ├── database.py
-├── README.md
-├── _headers
+├── requirements.txt
 │
-└── instance/
-    └── focusform.db
+├── instance/
+│   └── focusform.db
+│
+├── README.md
+└── .gitignore
 ```
 
-## Installation and Setup
+**Note:** The SQLite database is created automatically when the backend initializes. The `instance/` folder and database file are excluded from Git.
 
-### 1. Clone the repository
+---
+
+## ⚙️ Installation and Setup
+
+Follow these steps to run FocusForm locally.
+
+### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd focusform
+git clone https://github.com/rohith23-10/FocusForm.git
 ```
 
-### 2. Install Python dependencies
+### 2. Navigate to the Project Folder
 
 ```bash
-pip install flask flask-cors
+cd FocusForm
 ```
 
-### 3. Start the Flask backend
+### 3. Install Python Dependencies
+
+Make sure Python is installed.
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Start the Backend Server
 
 ```bash
 python app.py
 ```
 
-Backend runs at:
+The Flask backend will run at:
 
-`http://127.0.0.1:5000`
+```text
+http://127.0.0.1:5000
+```
 
-### 4. Start the frontend
+### 5. Start the Frontend
 
-Open a second terminal in the project folder:
+Open the project folder in Visual Studio Code.
+
+Use the **Live Server** extension to open `index.html`.
+
+Alternatively, run:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open your browser:
+Then open:
 
-`http://127.0.0.1:8000`
+```text
+http://127.0.0.1:8000
+```
 
-Allow camera access and calibrate your posture.
+### 6. Allow Camera Access
 
-## API Endpoints
+- Open the website in your browser.
+- Allow webcam permission.
+- Complete posture calibration.
+- Start monitoring your posture.
 
-| Method | Endpoint | Purpose |
+---
+
+## 🔌 Backend API Documentation
+
+The Flask backend provides REST API endpoints for storing and retrieving focus-session and posture data.
+
+**Backend URL:**
+
+https://focusform-ar89.onrender.com
+
+| Method | Endpoint | Description |
 |---|---|---|
 | GET | `/` | Check backend status |
-| POST | `/api/focus-sessions` | Save focus sessions |
-| GET | `/api/focus-sessions` | Retrieve focus sessions |
+| POST | `/api/focus-sessions` | Save a completed focus session |
+| GET | `/api/focus-sessions` | Retrieve focus-session records |
 | POST | `/api/posture-stats` | Save posture statistics |
 | GET | `/api/posture-stats` | Retrieve posture statistics |
 
-## Privacy
+### Example: Check Backend Status
 
-- Webcam frames are processed locally in the browser using MediaPipe.
-- Raw webcam video is not uploaded to the Flask backend.
-- Focus sessions and posture statistics are stored in the local SQLite database.
-- Frontend productivity data is also maintained using browser localStorage.
+```http
+GET /
+```
 
-## Future Improvements
+### Example: Retrieve Posture Statistics
 
-- User authentication and personalized accounts.
-- Cloud database integration.
-- Long-term productivity analytics.
-- Improved posture recommendations.
-- Cross-device data synchronization.
+```http
+GET /api/posture-stats
+```
 
-## Project Goal
+### Example: Retrieve Focus Sessions
 
-FocusForm aims to make healthy posture and productive working habits easier through AI-powered monitoring and intelligent productivity tools.
+```http
+GET /api/focus-sessions
+```
 
-**FocusForm – Sit Better. Focus Smarter.**
+---
+
+## 🗄️ Database Structure
+
+FocusForm uses SQLite to store application data.
+
+### 1. Focus Sessions
+
+| Column | Description |
+|---|---|
+| id | Unique session ID |
+| duration | Session duration |
+| session_type | Type of session |
+| completed_at | Completion timestamp |
+
+### 2. Posture Statistics
+
+| Column | Description |
+|---|---|
+| id | Unique record ID |
+| posture_score | Calculated posture score |
+| status | Posture status |
+| recorded_at | Record timestamp |
+
+---
+
+## ☁️ Deployment
+
+FocusForm is deployed using Render.
+
+| Component | Deployment |
+|---|---|
+| Frontend | https://focusform-frontend.onrender.com |
+| Backend | https://focusform-ar89.onrender.com |
+| Source Code | https://github.com/rohith23-10/FocusForm |
+
+The frontend is hosted as a static site, while the Flask backend runs as a web service.
+
+---
+
+## 🚀 Future Improvements
+
+- Long-term posture history and analytics.
+- More personalised posture recommendations.
+- Improved posture detection and calibration.
+- Persistent cloud database storage.
+- Additional productivity insights and reports.
+- User accounts and personalised settings.
+
+---
+
+## 🎯 Project Objective
+
+The objective of FocusForm is to combine artificial intelligence and productivity tools to encourage healthier sitting habits and improve focus during study and work sessions.
+
+**Sit Better. Focus Smarter.**
+
+---
+
+## 👨‍💻 Project
+
+**FocusForm – AI-Powered Posture Monitoring & Productivity Application**
+
+Built using MediaPipe, JavaScript, Python, Flask and SQLite.
+
+**Live Demo:** https://focusform-frontend.onrender.com
+
+**GitHub:** https://github.com/rohith23-10/FocusForm
