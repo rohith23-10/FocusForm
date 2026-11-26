@@ -2,7 +2,7 @@ import { PoseLandmarker, FilesetResolver } from "https://cdn.jsdelivr.net/npm/@m
 
 const $ = (id) => document.getElementById(id);
 const KEY = "focusform_data_v1";
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://focusform-ar89.onrender.com";
 let lastPostureSave = 0;
 
 /* ---------- STORAGE ---------- */
